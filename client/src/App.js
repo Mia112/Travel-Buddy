@@ -1,19 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect
+} from 'react-router-dom';
 
 import Landing from './components/landing/Landing';
 import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/Navbar';
+import MainNav from './components/Navigation/MainNav';
 
 import './App.css';
 const App = () => {
 	return (
 		<Router>
-			<div className='App'>
-				<Navbar />
-				<Route exact path='/' component={Landing} />
-				<Footer />
-			</div>
+			<MainNav />
+			<Switch>
+				<div className='App'>
+					<Route path='/' exact>
+						<Landing />
+					</Route>
+					<Route path='/create' exact></Route>
+
+					<Redirect to='/' />
+					<Footer />
+				</div>
+			</Switch>
 		</Router>
 	);
 };

@@ -9,23 +9,32 @@ import {
 import Landing from './components/landing/Landing';
 import Footer from './components/footer/Footer';
 import MainNav from './components/Navigation/MainNav';
-
+import Posts from './post/pages/Posts';
+import NewPost from './post/pages/NewPost';
 import './App.css';
 const App = () => {
 	return (
 		<Router>
 			<MainNav />
-			<Switch>
-				<div className='App'>
-					<Route path='/' exact>
-						<Landing />
-					</Route>
-					<Route path='/create' exact></Route>
+			<main>
+				<Switch>
+					<div className='App'>
+						<Route path='/' exact>
+							<Posts />
+						</Route>
+						<Route path='/api/logout' exact>
+							<Landing />
+						</Route>
 
-					<Redirect to='/' />
-					<Footer />
-				</div>
-			</Switch>
+						<Route path='/create/new' exact>
+							<NewPost />
+						</Route>
+
+						<Redirect to='/' />
+						<Footer />
+					</div>
+				</Switch>
+			</main>
 		</Router>
 	);
 };

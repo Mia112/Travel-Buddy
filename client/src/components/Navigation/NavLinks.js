@@ -7,14 +7,13 @@ const NavLinks = props => {
 		<ul className='nav-links'>
 			<li>
 				<NavLink to='/' exact>
-					ALL POST
+					Home
 				</NavLink>
 			</li>
 			<li>
-				<NavLink to='/u1/post'>MY POST</NavLink>
-			</li>
-			<li>
-				<NavLink to='/create'>ADD POST</NavLink>
+				<NavLink to='/create/new' exact>
+					Add Post
+				</NavLink>
 			</li>
 			<li>
 				<NavLink to='/api/logout'>Logout</NavLink>

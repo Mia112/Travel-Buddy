@@ -8,7 +8,7 @@ const Landing = () => {
 				<div className='container'>
 					<div className='row'>
 						<div className='col-md-12 text-center'>
-							<h1 className='display-3 mb-4'>Travel Buddy</h1>
+							<h3 className='display-3 mb-4'>Welcom to Travel Buddy</h3>
 							<p className='lead'>
 								Create an account and share your next destination with others.
 							</p>

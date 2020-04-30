@@ -3,14 +3,14 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
-	Redirect
+	Redirect,
 } from 'react-router-dom';
 
 import Landing from './components/landing/Landing';
 import Footer from './components/footer/Footer';
 import MainNav from './components/Navigation/MainNav';
 import Posts from './post/pages/Posts';
-import NewPost from './post/pages/NewPost';
+import PostForm from './post/pages/PostForm';
 import './App.css';
 const App = () => {
 	return (
@@ -27,7 +27,7 @@ const App = () => {
 						</Route>
 
 						<Route path='/create/new' exact>
-							<NewPost />
+							<PostForm />
 						</Route>
 
 						<Redirect to='/' />

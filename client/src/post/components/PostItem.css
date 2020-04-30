@@ -4,8 +4,6 @@
     object-fit: cover;
 }
 
-
-
 .user-image {
     width: 4rem;
     height: 4rem;
@@ -58,8 +56,6 @@
 
 .post-actions {
     padding: 1rem;
-
-
 }
 
 .post-modal-content {

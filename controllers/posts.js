@@ -3,21 +3,26 @@ const router = express.Router();
 const db = require('../models');
 const auth = require('../middleware/auth');
 
-//Get all videos
-router.get('/', auth, (req, res) => {
-	let userId = req.userId;
-	db.Post.find({ userId })
+//Get all post
+router.get('/posts', (req, res) => {
+	db.Post.find()
 		.then(() => res.json())
-		.catch(err => res.json(err));
+		.catch((err) => res.json(err));
 });
 
-//Create video
+//Create post
 router.post('/', auth, (req, res) => {
-	let userId = req.userId;
-	const newPost = { userId, ...req.body };
-	db.Post.create(newPost)
-		.then(() => res.json())
-		.catch(err => res.json(err));
+	const newPost = new Post({
+		text: req.body.text,
+		name: req.body.name,
+		user: req.user.id,
+		title: req.body.title,
+		photo: req.body.photo,
+	});
+	console.log(req.body.text);
+	db.Post.create(newPost.save())
+		.then((post) => res.json(post))
+		.catch((err) => res.json(err));
 });
 
 module.exports = router;
